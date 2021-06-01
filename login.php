@@ -8,11 +8,15 @@
         .red {
             color: red;
         }
+        .admin {
+            color: red;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 <?php
-    /*require('createBasicDatabaseAndAdmins'); In this code snippet, the initial 
+    require('createBasicDatabaseAndAdmins.php'); /*In this code snippet, the initial 
     database is created that will contain visitors and administrators. Two administrators will also be created.*/
     require('db.php');
     session_start();
@@ -53,6 +57,8 @@
         <input type="password" class="login-input" name="password" placeholder="Password"/>
         <input type="submit" value="Login" name="submit" class="login-button"/>
         <p class="link">Don't have an account? <a href="registration.php">Registration Now</a></p>
+        <p class="admin">Administrators:<br> Username: admin1 | Password: 12345<br>Username: admin2 | Password: 12345<br>
+        (Έχουν δημιουργηθεί ήδη στην βάση δεδομένων)</p>
   </form>
 <?php
     }

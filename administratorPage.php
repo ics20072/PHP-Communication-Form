@@ -15,23 +15,16 @@
         }
     .search-button {
         color: #fff;
-        background: #55a1ff;
+        background: #0059b3;
         border: 0;
         outline: 0;
-        width: 45%;
+        width: 40%;
         height: 45px;
         font-size: 16px;
         text-align: center;
         cursor: pointer;
         border-radius: 15%;
-        }
-    .search-input {
-        font-size: 15px;
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-bottom: 25px;
-        height: 25px;
-        width: calc(45% - 23px);
+        margin-bottom: 8px;
         }
     </style>
 </head>
@@ -51,7 +44,6 @@
     <form class="form" method="post">
         <h1 class="login-title">Management page</h1>
         <p>Hey, <?php echo $_SESSION['username']; ?>!</p>
-        <input type="text" class="search-input" name="search" placeholder="Search..." autofocus="true"/>
         <input type="submit" value="Search" name="searchRecord" class="search-button"/>
         <input type="submit" value="Create Database" name="createDB" class="login-button"/>
         <input type="submit" value="Show details" name="details" class="login-button"/>

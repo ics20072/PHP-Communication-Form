@@ -8,13 +8,18 @@
             table, th, td {
                 border: 1px solid black;
                 text-align: center;
+                background: #ccf2ff;
             } 
-            th {
+            th, h3 {
                 color: red;
             }
             .form {
                 width: 51%;
                 padding: 30px 25px;
+            }
+            h2 {
+                text-align: center;
+                color: red;
             }
     </style>
 </head>
@@ -39,6 +44,7 @@
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             echo "<div class='form'>
+            <h2>Data that has been registered</h2>
             <table><tr><th>ID</th><th>Name</th><th>Lastname</th><th>Email</th><th>Telephone</th><th>gender</th>
             <th>Age</th><th>Interests</th><th>Notifications</th><th>Submission Date</th></tr>";
         // output data of each row

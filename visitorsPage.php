@@ -1,3 +1,8 @@
+<?php
+    //include auth_session.php file on all user panel pages
+    include("auth_session.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,10 +44,10 @@
                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
             }
 
-            $firstname = $_REQUEST['firstname'];
-            $lastname = $_REQUEST['lastname'];
+            $firstname = trim($_REQUEST['firstname']);
+            $lastname = trim($_REQUEST['lastname']);
             $email = $_REQUEST['email'];
-            $telephone = $_REQUEST['phone'];
+            $telephone = trim($_REQUEST['phone']);
             if (isset($_POST['gender']))   
                  $gender = $_REQUEST['gender'];
             else
@@ -92,6 +97,7 @@
 
     <form class="form" method="post">
         <h1 class="login-title">Please fill in your details!</h1>
+        <p>Hey, <?php echo $_SESSION['username']; ?>!</p><hr>
         <input type="text" class="login-input" name="firstname" placeholder="Firstname..." autofocus="true"/>
         <input type="text" class="login-input" name="lastname" placeholder="Lastname..." autofocus="true"/>
         <input type="text" class="login-input" name="email" placeholder="Email..." autofocus="true"/>

@@ -29,7 +29,7 @@
         $confirmPassword = stripslashes($_REQUEST['ConfirmPassword']);
         $confirmPassword = mysqli_real_escape_string($con, $confirmPassword);
         $create_datetime = date("Y-m-d H:i:s");
-        if ($password === $confirmPassword && $password!="" && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if ($password === $confirmPassword && $password!="" && filter_var($email, FILTER_VALIDATE_EMAIL) && $username!="") {
 
             $query    = "INSERT into `visitors` (username, password, email, create_datetime)
                         VALUES ('$username', '" . md5($password) . "', '$email', '$create_datetime')";
@@ -42,7 +42,7 @@
             }
             else {
             echo "<div class='form'>
-                  <h3 class='red'>Required fields are missing.</h3><br/>
+                  <h3 class='red'>There was a problem during your registration!</h3><br/>
                   <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
                   </div>";
             }
