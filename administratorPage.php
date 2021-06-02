@@ -39,6 +39,10 @@
         if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['details'])) {
             header("Location: showDB.php");
         }
+
+        if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['searchRecord'])) {
+            header("Location: searchForm.php");
+        }
     ?>
 
     <form class="form" method="post">
