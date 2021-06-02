@@ -108,7 +108,7 @@
         <input type="radio" id="female" name="gender" value="female">
         <label for="female">Female</label><br>
         <hr>
-        <input type="number" class="login-input" name="age" autofocus="true" min="0" value="0"/>
+        <input type="number" class="login-input" name="age" autofocus="true" min="0" max="150" value="0"/>
         <label for="age">Age </label>
         <hr>
         <p>What products are you interested in?</p>
